@@ -13,6 +13,10 @@ function App() {
   return (
     <>
       <div className="calculator">
+        <div className="display">
+          <div className="input">{input || 0}</div>
+          <div className="result">{result}</div>
+        </div>
         <div className="buttons">
           <button className="button" onClick={() => clickHandler('7')}>7</button>
           <button className="button" onClick={() => clickHandler('8')}>8</button>
