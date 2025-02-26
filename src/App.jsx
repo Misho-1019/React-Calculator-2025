@@ -1,34 +1,40 @@
 
+import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState('');
+
+  const clickHandler = (value) => {
+    setInput(input + value)
+  }
 
   return (
     <>
-      <div class="calculator">
-        <input type="text" id="display" class="display" disabled />
-        <div class="buttons">
-          <button class="button" onclick="appendNumber('7')">7</button>
-          <button class="button" onclick="appendNumber('8')">8</button>
-          <button class="button" onclick="appendNumber('9')">9</button>
-          <button class="button operator" onclick="appendOperator('/')">/</button>
+      <div className="calculator">
+        <div className="buttons">
+          <button className="button" onClick={() => clickHandler('7')}>7</button>
+          <button className="button" onClick={() => clickHandler('8')}>8</button>
+          <button className="button" onClick={() => clickHandler('9')}>9</button>
+          <button className="button operator" >/</button>
 
-          <button class="button" onclick="appendNumber('4')">4</button>
-          <button class="button" onclick="appendNumber('5')">5</button>
-          <button class="button" onclick="appendNumber('6')">6</button>
-          <button class="button operator" onclick="appendOperator('*')">*</button>
+          <button className="button" onClick={() => clickHandler('4')}>4</button>
+          <button className="button" onClick={() => clickHandler('5')}>5</button>
+          <button className="button" onClick={() => clickHandler('6')}>6</button>
+          <button className="button operator" >*</button>
 
-          <button class="button" onclick="appendNumber('1')">1</button>
-          <button class="button" onclick="appendNumber('2')">2</button>
-          <button class="button" onclick="appendNumber('3')">3</button>
-          <button class="button operator" onclick="appendOperator('-')">-</button>
+          <button className="button" onClick={() => clickHandler('1')}>1</button>
+          <button className="button" onClick={() => clickHandler('2')}>2</button>
+          <button className="button" onClick={() => clickHandler('3')}>3</button>
+          <button className="button operator" >-</button>
 
-          <button class="button" onclick="appendNumber('0')">0</button>
-          <button class="button" onclick="appendDot()">.</button>
-          <button class="button equals" onclick="calculateResult()">=</button>
-          <button class="button operator" onclick="appendOperator('+')">+</button>
+          <button className="button" onClick={() => clickHandler('0')}>0</button>
+          {/* <button className="button" onClick="appendDot()">.</button> */}
+          <button className="button equals" >=</button>
+          <button className="button operator" >+</button>
         </div>
-        <button class="clear" onclick="clearDisplay()">AC</button>
+        {/* <button className="clear" onclick="clearDisplay()">AC</button> */}
       </div>
 
     </>
