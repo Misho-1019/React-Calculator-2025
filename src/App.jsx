@@ -7,19 +7,20 @@ function App() {
   const [result, setResult] = useState('');
 
   const clickHandler = (value) => {
-    setResult('')
+    // setResult('')
     setInput(input + value)
   }
 
   const clearHandler = () => {
     setInput('')
-    setResult(0)
+    setResult('')
   }
 
   const resultHandler = () => {
     try {
-      const equal = setResult(eval(input))
+      const equal = eval(input)
       setInput(equal)
+      setResult(equal)
     } catch (error) {
       setInput('Invalid!')
     }
@@ -30,7 +31,7 @@ function App() {
       <div className="calculator">
         <div className="display">
           <div className="input">{input}</div>
-          <div className="result">{result}</div>
+          {/* <div className="result">{result}</div> */}
         </div>
         <div className="buttons">
           <button className="button" onClick={() => clickHandler('7')}>7</button>
