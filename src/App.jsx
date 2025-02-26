@@ -10,6 +10,11 @@ function App() {
     setInput(input + value)
   }
 
+  const clearHandler = () => {
+    setInput('')
+    setResult('')
+  }
+
   return (
     <>
       <div className="calculator">
@@ -38,7 +43,7 @@ function App() {
           <button className="button equals" >=</button>
           <button className="button operator" >+</button>
         </div>
-        {/* <button className="clear" onclick="clearDisplay()">AC</button> */}
+        <button className="clear" onClick={clearHandler}>AC</button>
       </div>
 
     </>
