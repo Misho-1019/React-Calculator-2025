@@ -7,19 +7,29 @@ function App() {
   const [result, setResult] = useState('');
 
   const clickHandler = (value) => {
+    setResult('')
     setInput(input + value)
   }
 
   const clearHandler = () => {
     setInput('')
-    setResult('')
+    setResult(0)
+  }
+
+  const resultHandler = () => {
+    try {
+      const equal = setResult(eval(input))
+      setInput(equal)
+    } catch (error) {
+      setInput('Invalid Operation!')
+    }
   }
 
   return (
     <>
       <div className="calculator">
         <div className="display">
-          <div className="input">{input || 0}</div>
+          <div className="input">{input}</div>
           <div className="result">{result}</div>
         </div>
         <div className="buttons">
@@ -41,7 +51,7 @@ function App() {
           <button className="button" onClick={() => clickHandler('0')}>0</button>
           <button className="button" onClick={() => clickHandler('.')}>.</button>
           <button className="button operator" onClick={() => clickHandler('+')}>+</button>
-          <button className="button equals" >=</button>
+          <button className="button equals" onClick={resultHandler}>=</button>
         </div>
         <button className="clear" onClick={clearHandler}>AC</button>
       </div>
