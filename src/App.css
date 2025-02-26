@@ -15,7 +15,7 @@ body {
 }
 
 .calculator {
-  background-color: #fff;
+  background-color: #3D3C3E;
   width: 320px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -32,10 +32,10 @@ body {
   font-size: 2rem;
   text-align: right;
   padding: 15px;
-  border: 2px solid #ccc;
+  border: 2px solid #1AB6A5;
   border-radius: 12px;
-  background-color: #f7f7f7;
-  color: #333;
+  background-color: #3D3C3E;
+  color: #1AB6A5;
   outline: none;
 }
 
@@ -49,7 +49,8 @@ body {
 .button {
   padding: 20px;
   font-size: 1.6rem;
-  background-color: #ececec;
+  background-color: #0E1015;
+  color: #1AB6A5;
   border: 1px solid #ddd;
   border-radius: 12px;
   cursor: pointer;
@@ -57,36 +58,51 @@ body {
 }
 
 .button:hover {
-  background-color: #ddd;
+  background-color: #304E69;
   transform: scale(1.05);
 }
 
 .operator {
-  background-color: #ff6f61;
+  background-color: #1AB6A5;
   color: white;
 }
 
 .operator:hover {
-  background-color: #f55a47;
+  background-color: #CB7408;
+}
+
+.operations {
+  /* display: grid; */
+  /* grid-template-columns: repeat(1, 1fr); */
+  margin-top: 20px;
+  width: 100%;
 }
 
 .equals {
-  background-color: #4CAF50;
+  background-color: #1AB6A5;
   color: white;
-  grid-column: span 2;
+  /* grid-column: span 2; */
+  width: 22%;
+  padding: 20px;
+  font-size: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .equals:hover {
-  background-color: #45a049;
+  background-color: #CB7408;
 }
 
 .clear {
-  width: 100%;
-  padding: 15px;
-  background-color: #f44336;
+  width: 75%;
+  padding: 20px;
+  background-color: #1AB6A5;
   color: white;
   border-radius: 12px;
-  margin-top: 20px;
+  /* padding-left: 30px; */
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;

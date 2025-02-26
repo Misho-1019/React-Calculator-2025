@@ -21,7 +21,7 @@ function App() {
       const equal = setResult(eval(input))
       setInput(equal)
     } catch (error) {
-      setInput('Invalid Operation!')
+      setInput('Invalid!')
     }
   }
 
@@ -50,10 +50,13 @@ function App() {
 
           <button className="button" onClick={() => clickHandler('0')}>0</button>
           <button className="button" onClick={() => clickHandler('.')}>.</button>
+          <button className="button operator" onClick={() => clickHandler('%')}>%</button>
           <button className="button operator" onClick={() => clickHandler('+')}>+</button>
-          <button className="button equals" onClick={resultHandler}>=</button>
         </div>
-        <button className="clear" onClick={clearHandler}>AC</button>
+        <div className='operations'>
+          <button className="clear" onClick={clearHandler}>AC</button>
+          <button className="equals" onClick={resultHandler}>=</button>
+        </div>
       </div>
 
     </>
